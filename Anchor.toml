@@ -8,10 +8,10 @@ skip-lint = false
 calculator_dapp = "2V9fcYFzLSBSS6uSKzbjipUvwkWZaeRfiV38amAk16sq"
 
 [registry]
-url = "https://api.apr.dev"
+url = "https://anchor.projectserum.com"
 
 [provider]
-cluster = "Localnet"
+cluster = "localnet"
 wallet = "/Users/mhokzone/.config/solana/id.json"
 
 [scripts]

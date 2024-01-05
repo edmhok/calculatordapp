@@ -1,8 +1,8 @@
-const assert = require("assert");
-const anchor = require("@project-serum/anchor");
+import assert from "assert";
+import anchor from "@project-serum/anchor";
 const { SystemProgram } = anchor.web3;
 describe("calculatordapp", () => {
-	const provider = anchor.Provider.local();
+	const provider = anchor.AnchorProvider.local();
 	anchor.setProvider(provider);
 	const calculator = anchor.web3.Keypair.generate();
 	const program = anchor.workspace.Calculatordapp;
@@ -32,7 +32,7 @@ describe("calculatordapp", () => {
 		);
 		assert.ok(account.result.eq(new anchor.BN(5)));
 	});
-	// IMPLEMENT YOURSELF! Subtraction test
+	//IMPLEMENT YOURSELF! Subtraction test
 	it("Subtracts two numbers", async function () {
 		await program.rpc.subtract(new anchor.BN(32), new anchor.BN(33), {
 			accounts: {
@@ -46,7 +46,7 @@ describe("calculatordapp", () => {
 		assert.ok(account.result.eq(new anchor.BN(-1)));
 	});
 
-	// IMPLEMENT YOURSELF! Multiplication test
+	//IMPLEMENT YOURSELF! Multiplication test
 	it("Multiplies two numbers", async function () {
 		await program.rpc.multiply(new anchor.BN(2), new anchor.BN(3), {
 			accounts: {
@@ -60,7 +60,7 @@ describe("calculatordapp", () => {
 		assert.ok(account.result.eq(new anchor.BN(6)));
 	});
 
-	// IMPLEMENT YOURSELF! Division test
+	//IMPLEMENT YOURSELF! Division test
 	it("Divides two numbers", async function () {
 		await program.rpc.divide(new anchor.BN(10), new anchor.BN(3), {
 			accounts: {
